@@ -1,0 +1,55 @@
+package com.test.oops;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class TypeCastingMethods {
+
+	public static void main(String[] args) {
+
+		// Integer to String
+		int no = 100;
+		String st = String.valueOf(no);
+		String ss = Integer.toString(no);
+
+		System.out.println("Int to String: " + st);
+		System.out.println("Int to String: " + ss);
+
+		// String to Integer
+		String s = "200";
+		int i = Integer.parseInt(s);
+		int ii = Integer.valueOf(s);
+		System.out.println("String to Integer : " + i);
+		System.out.println("String to Integer : " + ii);
+
+		// Widening Casting
+		int a = 100;
+		long l = i;
+		double d = l;
+		System.out.println(d);
+
+		// Narrowing Casting
+		double dd = 186.66;
+		long ll = (long) dd;
+		int cc = (int) ll;
+		System.out.println(cc);
+
+		// String to Date
+		String sd = "30/06/2021 10:20:15";
+		String sdd = "30/06/2021";
+		try {
+			Date ddate = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss").parse(sd);
+			System.out.println(ddate);
+			try {
+				Date date = new SimpleDateFormat("dd/MM/yyyy").parse(sdd);
+				System.out.println(date);
+			} catch (Exception z) {
+				System.out.println(z);
+			}
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+
+	}
+
+}
